@@ -137,7 +137,11 @@ func (f EmailFormatChecker) IsFormat(input interface{}) bool {
 	}
 
 	fmt.Println("Email ", asString)
+	fmt.Println(rxEmail)
+
 	match := rxEmail.MatchString(asString)
+
+	fmt.Println(match)
 	return match
 }
 
