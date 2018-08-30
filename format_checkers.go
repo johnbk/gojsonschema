@@ -1,6 +1,7 @@
 package gojsonschema
 
 import (
+	"fmt"
 	"net"
 	"net/url"
 	"regexp"
@@ -135,7 +136,9 @@ func (f EmailFormatChecker) IsFormat(input interface{}) bool {
 		return false
 	}
 
-	return rxEmail.MatchString(asString)
+	fmt.Println("Email ", asString)
+	match := rxEmail.MatchString(asString)
+	return match
 }
 
 // Credit: https://github.com/asaskevich/govalidator
